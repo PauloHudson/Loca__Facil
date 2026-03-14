@@ -1,0 +1,355 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.header {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1002;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-toggle-open span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.menu-toggle-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle-open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-header,
+.nav-divider,
+.nav-footer {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-icon {
+  display: none;
+}
+
+.nav-link i,
+.nav-button i {
+  font-size: 1.3rem;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mobile Responsivo */
+@media (max-width: 768px) {
+  .header-content {
+    align-items: center;
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+    padding: 0;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    overflow-y: auto;
+  }
+
+  /* mmoostrar elementos exclusivos do mobile */
+  .nav-header,
+  .nav-links,
+  .nav-footer {
+    display: flex;
+  }
+
+  .nav-divider {
+    display: block;
+  }
+
+  .nav-open {
+    right: 0;
+  }
+
+  .nav-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1.5rem 1.5rem;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .user-info {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .user-name {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .user-email {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .nav-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 0.5rem 0;
+  }
+
+  .nav-links {
+    flex: 1;
+    padding: 0.5rem 0;
+    flex-direction: column;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0;
+    color: #333;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover {
+    background-color: #f5f5f5;
+    border-left-color: #007bff;
+    transform: translateX(2px);
+  }
+
+  .nav-link.active {
+    background-color: #e3f2fd;
+    border-left-color: #007bff;
+    color: #007bff;
+    font-weight: 600;
+  }
+
+  .nav-link.active i {
+    color: #007bff;
+  }
+
+
+  .nav-footer {
+    padding: 1rem;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .nav-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: #ffebee;
+    color: #d32f2f;
+    font-weight: 500;
+    border: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .nav-button:hover {
+    background-color: #ffcdd2;
+    transform: scale(1.02);
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.75rem 0;
+  }
+
+  .header-content {
+    padding: 0 0.75rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .nav {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .user-avatar {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .nav-header {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .main-content {
+    padding: 0.75rem;
+  }
+}
