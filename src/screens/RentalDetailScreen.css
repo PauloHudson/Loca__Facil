@@ -1,0 +1,154 @@
+.rental-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #007AFF;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+.rental-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rental-card h1 {
+  margin-top: 0;
+  color: #333;
+}
+
+.form-section {
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.form-section h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.form-section .price {
+  margin: 0;
+  color: #007AFF;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.rental-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #007AFF;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.insurance-note {
+  margin: 0.5rem 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.submit-button {
+  padding: 0.75rem;
+  background-color: #007AFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #0051BA;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background-color: #fee;
+  color: #c00;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #c00;
+  margin-bottom: 1rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .rental-container {
+    padding: 0.75rem;
+  }
+
+  .rental-card {
+    padding: 1.5rem;
+  }
+
+  .rental-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-section h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rental-card {
+    padding: 1rem;
+  }
+
+  .rental-card h1 {
+    font-size: 1.3rem;
+  }
+
+  .form-section {
+    padding: 0.75rem;
+  }
+
+  .form-input {
+    font-size: 0.95rem;
+  }
+}

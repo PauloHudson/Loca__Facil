@@ -1,0 +1,165 @@
+.listing-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.listing-header {
+  background-color: #f0f0f0;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.listing-title {
+  font-size: 2rem;
+  margin: 0;
+  color: #333;
+  flex: 1;
+  min-width: 200px;
+}
+
+.listing-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0.5rem 0 0 0;
+  flex: 1;
+  min-width: 100px;
+}
+
+.refresh-btn {
+  padding: 0.5rem 1rem;
+  background-color: #007AFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.refresh-btn:hover {
+  background-color: #0051BA;
+}
+
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.listing-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.listing-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  margin: 0;
+  color: #333;
+  flex: 1;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007AFF;
+  white-space: nowrap;
+}
+
+.card-details {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.detail {
+  margin: 0.3rem 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.rental-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007AFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rental-button:hover {
+  background-color: #0051BA;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.error-message {
+  background-color: #fee;
+  color: #c00;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #c00;
+  margin-bottom: 1rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .listing-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .listing-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-header {
+    flex-direction: column;
+  }
+
+  .price {
+    margin-top: 0.5rem;
+  }
+}
